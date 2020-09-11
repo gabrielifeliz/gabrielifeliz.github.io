@@ -1,0 +1,21 @@
+body {
+    background-image: url(/images/beach1.png);
+}
+.red-nav-bar {
+    background-color: #a72e28;
+}
+.main-div {
+    background-color: #ffffffe6; 
+    width: 100%; 
+    display: flex; 
+    justify-content: center;
+}
+.main-div-title {
+    text-align: center;
+}
+.letter {
+    font-family: 'Times New Roman', Times, serif;
+}
+.sender-column {
+    text-align: right;
+}
