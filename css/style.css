@@ -1,3 +1,5 @@
+/* Home Page CSS */
+
 .beach-bkg-pic {
     background-image: url(/images/beach1.png);
 }
@@ -12,11 +14,4 @@
 }
 .main-div-title {
     text-align: center;
-}
-.letter {
-    font-family: 'Times New Roman', Times, serif;
-    color: black;
-}
-.sender-column {
-    text-align: right;
 }
