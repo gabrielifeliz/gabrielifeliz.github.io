@@ -7,7 +7,7 @@ html, body {
   
   html {
     font-size: 10px;
-    background-color: #a9a9a9;
+    background-color: #007fff;
   }
   
   body {
@@ -19,12 +19,12 @@ html, body {
   /* || typography */
   
   h1, h2, h3 {
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Grandstander', cursive;
     color: #2a2a2a;
   }
   
   p, input, li {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Grandstander', sans-serif;
     color: #2a2a2a;
   }
   
@@ -62,7 +62,7 @@ html, body {
   }
   
   main, header, nav, article, aside, footer, section {
-    background-color: rgba(0,255,0,0.5);
+    background-color: #00ff0080;
     padding: 1%;
   }
   
