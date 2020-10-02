@@ -1,0 +1,28 @@
+html {
+    background-color: #E6BD17BF;
+}
+
+header {
+    display: flex;
+    background-color: #E50601;
+    justify-content: space-between;
+}
+
+header img {
+    height: 60px;
+    padding-top: 10px;
+}
+
+header h1 {
+    padding-left: 10px;
+}
+
+h1, h2, h3 {
+    font-family: 'Sansita Swashed', cursive;
+    color: #2a2a2a;
+}
+
+p, input, li {
+    font-family: 'Sansita Swashed', sans-serif;
+    color: #2a2a2a;
+}
