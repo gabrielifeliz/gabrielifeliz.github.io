@@ -1,16 +1,16 @@
 html {
-    background-color: #E6BD17BF;
+    background-color: #E6CD55;
 }
 
 header {
     display: flex;
-    background-color: #E50601;
+    background-color: #E6493E;
     justify-content: space-between;
+    padding: 1%;
 }
 
 header img {
-    height: 60px;
-    padding-top: 10px;
+    height: 80px;
 }
 
 header h1 {
@@ -25,4 +25,9 @@ h1, h2, h3 {
 p, input, li {
     font-family: 'Sansita Swashed', sans-serif;
     color: #2a2a2a;
+}
+
+footer {
+    background-color: #E6493E;
+    padding: 1%;
 }
