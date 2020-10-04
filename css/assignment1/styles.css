@@ -118,7 +118,7 @@
     .resume-image-caption {
         display: flex;
         flex-flow: row wrap;
-        justify-content: center;
+        justify-content: space-evenly;
         margin-bottom: 15px;
         flex: 1;
     }
