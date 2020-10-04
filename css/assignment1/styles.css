@@ -48,8 +48,8 @@
 
 .resume-image-caption {
     display: flex;
-    flex-flow: row wrap;
-    flex: 0 1 auto;
+    flex-flow: column wrap;
+    flex: 1;
 }
 
 .resume-image {
@@ -61,24 +61,75 @@
     border-radius: 4px;
 }
 
+
+
 @media screen and (max-width: 1000px){
         
+    .resume-background {
+        background-color: #FFE77A;
+    }
+    
+    .resume-header {
+        background-color: #E50601;
+        margin: -8px -8px 15px -8px;
+        padding: 1%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .resume-text {
+        font-family: 'Sansita Swashed', sans-serif;
+        color: #000;
+    }
+    
+    .resume-text-name {
+        font-family: 'Sansita Swashed', sans-serif;
+        color: #fff;
+    }
+    
     .resume-content {
+        max-width: 960px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .wrapper {
+        display: flex;
         justify-content: center;
     }
-
-    .resume-image-caption {
-        flex-grow: 1;
-        flex-shrink: 0;
-        justify-content: space-evenly;
-        margin-bottom: 30px;
-    }
-
-    .caption {
-        align-self: center;
-    }
-
+    
     .resume-work-history {
-        justify-content: center;
+        background-color: #fff;
+        margin-left: 4px;
+        padding-left: 5px;
+        min-width: 640px;
     }
+    
+    .caption {
+        word-break: break-word;
+        max-width: 310px;
+        height: fit-content;
+        margin: 70px 10px 10px 10px;
+        background-color: #fff;
+    }
+    
+    .resume-image-caption {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin-bottom: 15px;
+        flex: 1;
+    }
+    
+    .resume-image {
+        display: flex;
+        max-width: 320px;
+        width: 309px;
+        height: 210px;
+        border: 1px solid;
+        border-radius: 4px;
+    }
+    
 }
