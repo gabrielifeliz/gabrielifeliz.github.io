@@ -5,18 +5,18 @@ headerDiv.textContent = myFullName + "'s Lab 4";
 // 2 Insert two paragraphs into the div with the class "content"
 //  Label each paragraph with a distinct class name
 let newP1 = document.createElement("p");
-newP1.className = "p1";
+newP1.className = "content1";
 let newP2 = document.createElement("p");
-newP2.className = "p2";
+newP2.className = "content2";
 let contentDiv = document.querySelector(".content");
 contentDiv.appendChild(newP1);
 contentDiv.appendChild(newP2);
 // 3 Into the first paragraph, insert the phrase "my name has " length of your name " characters"
 //      (e.g. my name has 10 characters).
-let p1Element = document.querySelector(".p1"); 
+let p1Element = document.querySelector(".content1"); 
 p1Element.textContent = "my name has " + myFullName.match(/[a-z]/gi).length + " characters";
 // 4 & 5 Into the second paragraph tag, return the 3rd character in your first name
-let p2Element = document.querySelector(".p2");
+let p2Element = document.querySelector(".content2");
 p2Element.appendChild(document.createTextNode("the third character in my name is " + myFullName.charAt(2).toUpperCase()));
 // 6 Add a new line to your second paragraph
 p2Element.innerHTML += "<br/>";
