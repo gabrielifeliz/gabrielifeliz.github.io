@@ -9,6 +9,7 @@ document.querySelector("body").appendChild(myOL); // Retrieve and add empty orde
 let myBtn = document.createElement("button"); // Create button
 myBtn.textContent = "Select 25 Random Countries"; // Add text to button
 document.querySelector("body").appendChild(myBtn); // Retrieve and add button to the web page's body after empty ordered list
+
 // Function that populates ordered list with 25 random countries in an alphabetic order
 function selectCountries() {
   // All countries with name and code listed from IBAN
@@ -296,6 +297,7 @@ function selectCountries() {
         }
       } else {
         sortList(); // Sort list in alphabetical order
+        logUnselectedCountries(allCountries); // Log unselected countries to console
         break;
       }
     } else {
@@ -304,16 +306,17 @@ function selectCountries() {
   }
 }
 
+// Function to sort country list in alphabetical order
+// Credit: https://www.w3schools.com/howto/howto_js_sort_list.asp
 function sortList() {
-  var list, i, switching, b, shouldSwitch;
-  list = document.querySelector("ol");
+  let i, switching, b, shouldSwitch;
   switching = true;
   /* Make a loop that will continue until
   no switching has been done: */
   while (switching) {
     // start by saying: no switching is done:
     switching = false;
-    b = list.getElementsByTagName("li");
+    b = document.querySelector("ol").getElementsByTagName("li");
     // Loop through all list-items:
     for (i = 0; i < (b.length - 1); i++) {
       // start by saying there should be no switching:
@@ -336,5 +339,24 @@ function sortList() {
     }
   }
 }
+
+// Function to log unselected countries to console
+function logUnselectedCountries(countries) {
+  // Create an array for selected countries
+  let selectedCountries = new Array();
+  // Retrieve list items from HTML file
+  let b = document.querySelector("ol").getElementsByTagName("li");
+  for (let i = 0; i < (b.length - 1); i++) {
+    // Add selected countries to the array
+    selectedCountries.push(b[i].innerText);
+  }
+  for (let i = 0; i < (countries.length - 1); i++) {
+    if (!selectedCountries.includes(countries[i])) {
+      // Log countries that aren't included in the selected countries list
+      console.log(countries[i]);
+    }
+  }   
+}
+
 // Add event listener
 document.querySelector("button").addEventListener("click", selectCountries);
