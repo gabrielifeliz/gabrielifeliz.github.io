@@ -10,7 +10,9 @@ let myBtn = document.createElement("button"); // Create button
 myBtn.textContent = "Select 25 Random Countries"; // Add text to button
 document.querySelector("body").appendChild(myBtn); // Retrieve and add button to the web page's body after empty ordered list
 
-// Function that populates ordered list with 25 random countries in an alphabetic order
+/* 
+    Function that populates ordered list with 25 random countries in an alphabetic order
+*/
 function selectCountries() {
   // All countries with name and code listed from IBAN
   let allCountries = [
@@ -306,8 +308,10 @@ function selectCountries() {
   }
 }
 
-// Function to sort country list in alphabetical order
-// Credit: https://www.w3schools.com/howto/howto_js_sort_list.asp
+/* Function to sort country list in alphabetical order
+   Credit: https://www.w3schools.com/howto/howto_js_sort_list.asp
+   I made changes for the function to work here
+*/
 function sortList() {
   let i, switching, b, shouldSwitch;
   switching = true;
@@ -340,7 +344,9 @@ function sortList() {
   }
 }
 
-// Function to log unselected countries to console
+/* 
+    Function to log unselected countries to console
+*/
 function logUnselectedCountries(countries) {
   // Create an array for selected countries
   let selectedCountries = new Array();
