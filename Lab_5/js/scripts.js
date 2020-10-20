@@ -197,7 +197,7 @@ function selectCountries() {
     { name: "Reunion", code: "RE" },
     { name: "Romania", code: "RO" },
     { name: "Russian Federation", code: "RU" },
-    { name: "RWANDA", code: "RW" },
+    { name: "Rwanda", code: "RW" },
     { name: "Saint Helena", code: "SH" },
     { name: "Saint Kitts and Nevis", code: "KN" },
     { name: "Saint Lucia", code: "LC" },
@@ -270,7 +270,10 @@ function selectCountries() {
     let myLI = document.createElement("li");
     // Include text to list item
     myLI.innerHTML =
-      "<strong>" + choosenCountry["code"] + "</strong> " + choosenCountry["name"];
+      "<strong>" +
+      choosenCountry["code"] +
+      "</strong> " +
+      choosenCountry["name"];
     // Retrieve ordered list
     let myCountryList = document.querySelector("ol");
     // Create boolean variable to check whether the country exists in the list
@@ -314,12 +317,15 @@ function sortList() {
     switching = false;
     b = document.querySelector("ol").getElementsByTagName("li");
     // Loop through all list-items:
-    for (i = 0; i < (b.length - 1); i++) {
+    for (i = 0; i < b.length - 1; i++) {
       // start by saying there should be no switching:
       shouldSwitch = false;
       /* check if the next item should
       switch place with the current item: */
-      if (b[i].innerHTML.split(" ")[1].toLowerCase() > b[i + 1].innerHTML.split(" ")[1].toLowerCase()) {
+      if (
+        b[i].innerHTML.split(" ")[1].toLowerCase() >
+        b[i + 1].innerHTML.split(" ")[1].toLowerCase()
+      ) {
         /* if next item is alphabetically
         lower than current item, mark as a switch
         and break the loop: */
@@ -344,16 +350,16 @@ function logUnselectedCountries(countries) {
   let selectedCountries = new Array();
   // Retrieve list items from HTML file
   let b = document.querySelector("ol").getElementsByTagName("li");
-  for (let i = 0; i < (b.length - 1); i++) {
+  for (let i = 0; i < b.length - 1; i++) {
     // Add selected countries to the array
     selectedCountries.push(b[i].innerText);
   }
-  for (let i = 0; i < (countries.length - 1); i++) {
+  for (let i = 0; i < countries.length - 1; i++) {
     if (!selectedCountries.includes(countries[i]["code"])) {
       // Log countries that aren't included in the selected countries list
       console.log(countries[i]["code"] + " " + countries[i]["name"]);
     }
-  }   
+  }
 }
 
 // Add event listener

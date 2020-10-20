@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/form_styles.css">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="css/form_styles.css" />
+  </head>
+  <body>
+    <form action="https://fierce-taiga-97625.herokuapp.com/lab" method="post">
+        <div>
+            <h1><strong>HTML Forms Lab</strong></h1><br/>
+            <label for="name"><strong>Name</strong></label><br/>
+            <input type="text" id="name" name="name" maxlength="140" /><br/><br/>
+            <label for="interests"><strong>Interests</strong></label><br/>
+            <textarea id="interests" name="interests" rows="5" cols="33" placeholder="Please enter your interests here"></textarea><br/><br/>
+            <button type="submit" title="Submit">Submit</button>
+        </div>
+    </form>
+  </body>
 </html>
