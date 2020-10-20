@@ -300,7 +300,7 @@ function selectCountries() {
   }
 }
 
-/* Function to sort country list in alphabetical order
+/* Function to sort country list by country name in alphabetical order
    Credit: https://www.w3schools.com/howto/howto_js_sort_list.asp
    I made changes for the function to work here
 */
