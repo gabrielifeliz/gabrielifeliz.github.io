@@ -1,28 +1,40 @@
 const main = document.getElementById("main");
 
-function getClasses() {
-  let classId = document.getElementById("courseId").value; // Your code here
-  console.log(classId);
-  if ((typeof classId !== "undefined") & (classId !== "")) {
-    let classURL = "https://api.umd.io/v0/courses/" + classId; // Your code here
+function getBusRoute() {
+  let busRoute = document.getElementById("busroute").value; // Your code here
+  console.log(busRoute);
+  if ((typeof busRoute !== "undefined") & (busRoute !== "")) {
+    let busRouteURL = "https://api.umd.io/v0/bus/routes/" + busRoute; // Your code here
 
     // YOUR CODE HERE
-    const fetchPromise = fetch(classURL);
+    const fetchPromise = fetch(busRouteURL);
     fetchPromise
       .then((response) => {
         return response.json();
       })
-      .then((course) => {
-        sessionStorage.setItem("name", course.name);
-        sessionStorage.setItem("semester", course.semester);
-        sessionStorage.setItem("credits", course.credits);
-        sessionStorage.setItem("description", course.description);
+      .then((route) => {
+        sessionStorage.setItem("title", route.title);
+        sessionStorage.setItem("lat_max", route.lat_max);
+        sessionStorage.setItem("lat_min", route.lat_min);
+        sessionStorage.setItem("lon_max", route.lon_max);
+        sessionStorage.setItem("lon_min", route.lon_min);
+      })
+      .catch((err) => {
+        console.log(err);
+        main.innerHTML = "Invalid bus route";
+        sessionStorage.setItem("title", "Nothing Set");
+        sessionStorage.setItem("lat_max", "Nothing Set");
+        sessionStorage.setItem("lat_min", "Nothing Set");
+        sessionStorage.setItem("lon_max", "Nothing Set");
+        sessionStorage.setItem("lon_min", "Nothing Set");
       });
   } else {
     main.innerHTML = "No value provided";
-    sessionStorage.setItem("name", "Nothing Set");
-    sessionStorage.setItem("semester", "Nothing Set");
-    sessionStorage.setItem("credits", "Nothing Set");
-    sessionStorage.setItem("description", "Nothing Set");
+    sessionStorage.setItem("title", "Nothing Set");
+    sessionStorage.setItem("lat_max", "Nothing Set");
+    sessionStorage.setItem("lat_min", "Nothing Set");
+    sessionStorage.setItem("lon_max", "Nothing Set");
+    sessionStorage.setItem("lon_min", "Nothing Set");
+
   }
 }
