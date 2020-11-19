@@ -7,8 +7,9 @@ console.log(url);
 let settings = { method: "Get" };
 let chartValues = [];
 
+// Embedding script tag to enable CanvasJS
 let canvasJS = document.createElement('script');
-canvasJS.setAttribute('defer', 'true')
+canvasJS.setAttribute('async', 'true')
 canvasJS.src = 'https://canvasjs.com/assets/script/canvasjs.min.js';
 document.querySelector('head').appendChild(canvasJS)
 
@@ -59,7 +60,7 @@ async function getData() {
             }
         })
         .then(values => console.log(chartValues));
-        //chart.render(); // Do you need to remove the comments from here in order to get it to work?
+        chart.render(); // Do you need to remove the comments from here in order to get it to work? Yup
 }
 
 window.onload = async function makeChart() {
@@ -81,4 +82,4 @@ window.onload = async function makeChart() {
     chart.render();
 }
 
-//window.onload = makeChart();
+window.onload = makeChart();
