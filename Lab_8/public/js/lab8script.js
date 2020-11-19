@@ -60,7 +60,7 @@ async function getData() {
             }
         })
         .then(values => console.log(chartValues));
-        chart.render(); // Do you need to remove the comments from here in order to get it to work? Yup
+        chart.render(); // Do you need to remove the comments from here in order to get it to work? Yup!
 }
 
 window.onload = async function makeChart() {
