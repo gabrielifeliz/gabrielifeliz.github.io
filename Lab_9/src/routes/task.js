@@ -32,13 +32,13 @@ router.post('/task', (req, res) => {
 })
 
 //GET
-router.get('/task/:taskId', (req, res) => {
-    if (!req.params.taskId) { //TODO
+router.get('/task', (req, res) => {
+    if (!req.query.taskId) { //TODO
         return res.status(400).send('Missing URL parameter id')
     }
     let sql = "select * from tasklist where id = ?"
-    console.log("req.query.taskId: " + req.params.taskId) //TODO
-    let params = [req.params.taskId] //TODO
+    console.log("req.query.taskId: " + req.query.taskId) //TODO
+    let params = [req.query.taskId] //TODO
     db.get(sql, params, (err, row) => {
         if (err) {
           res.status(400).json({"error":err.message});
@@ -52,10 +52,10 @@ router.get('/task/:taskId', (req, res) => {
 })
 
 //Update
-router.put('/task/:taskId', (req, res) => {
+router.put('/task', (req, res) => {
     console.log("PUT called")
     var data = {
-        id : req.params.taskId, //TODO
+        id : req.query.taskId, //TODO
         taskName: req.body.taskName //TODO
         
     }
@@ -83,10 +83,10 @@ router.put('/task/:taskId', (req, res) => {
 
 //Delete
 //TODO add entire DELETE method
-router.delete("/task/:taskId", (req, res) => {
+router.delete("/task", (req, res) => {
     db.run(
         'DELETE FROM tasklist WHERE id = ?',
-        req.params.taskId,
+        req.query.taskId,
         function (err, result) {
             if (err){
                 res.status(400).json({"error": res.message})
