@@ -9,7 +9,7 @@ function submitTask() {
   let taskDueDate = document.getElementById("taskDueDate").value;
   console.log("TaskName:" + taskNameParam);
   console.log("taskDueDate:" + taskDueDate);
-  let data = {'taskDueDate':taskDueDate, 'taskName':taskNameParam};
+  data = {'taskDueDate':taskDueDate, 'taskName':taskNameParam};
 
   console.log(JSON.stringify(data))
   let taskURL = "http://localhost:4000/task";
@@ -62,8 +62,8 @@ function getTask() {
         if (typeof task.data.id !== "undefined") {
           taskName = task.data.taskName;
           taskId = task.data.id;
-          taskDate = task.data.dueDate;
-          message = "ID: " + taskId + "<br>TaskName: " + taskName + "<br> Due Date: " + taskDate; 
+          taskDueDate = task.data.dueDate;
+          message = "ID: " + taskId + "<br>TaskName: " + taskName + "<br> Due Date: " + taskDueDate; 
         }
         document.getElementById("getTaskContent").innerHTML = message;
     })
@@ -81,7 +81,7 @@ function updateTask() {
   let taskNameParam = document.getElementById("updateTaskName").value;
   console.log("TaskId:" + taskIdParam);
   console.log("TaskName:" + taskNameParam);
-  let data = {'taskName':taskNameParam};
+  data = {'taskName':taskNameParam};
 
   console.log(JSON.stringify(data))
   let taskURL = "http://localhost:4000/task?taskId=" + taskIdParam;

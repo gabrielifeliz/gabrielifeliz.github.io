@@ -38,7 +38,7 @@ router.get('/task/:taskId', (req, res) => {
     }
     let sql = "select * from tasklist where id = ?"
     console.log("req.query.taskId: " + req.params.taskId) //TODO
-    let params = [req.params.id] //TODO
+    let params = [req.params.taskId] //TODO
     db.get(sql, params, (err, row) => {
         if (err) {
           res.status(400).json({"error":err.message});
