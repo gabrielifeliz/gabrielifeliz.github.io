@@ -347,32 +347,33 @@ function submitNewGroup() {
 /*
  ------ SEARCH TASKS ------
 */
-const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+const tasks = [];
 
-const cities = [];
+fetch('./allTasks', { method: "Get" })
+    .then(res => res.json())
+    .then((json) => {
+      json.data.forEach(element => {
+        tasks.push(element);
+      });
+    })
 
-fetch(endpoint)
-  .then(blob => blob.json())
-  .then(data => cities.push(...data))
-
-function findMatches(wordToMatch, cityPlaces) {
-  return cityPlaces.filter(place => {
+function findMatches(wordToMatch, taskList) {
+  return taskList.filter(task => {
     const regex = new RegExp(wordToMatch, 'gi');
-    return place.city.match(regex) || place.state.match(regex)
+    return task.taskName.match(regex)
   })
 }
 
 function displayMatches() {
   console.log(this.value);
-  const matchArray = findMatches(this.value, cities);
+  const matchArray = findMatches(this.value, tasks);
   console.log(matchArray);
-  const html = matchArray.map(place => {
+  const html = matchArray.map(task => {
     const regex = new RegExp(this.value, 'gi');
-    const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
-    const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
+    const taskName = task.taskName.replace(regex, `<span class="hl">${this.value}</span>`);
     return `
       <li>
-        <span class="name">${cityName}, ${stateName}</span>
+        <span class="name">${taskName}</span>
       </li>
       `;
   }).join('');
