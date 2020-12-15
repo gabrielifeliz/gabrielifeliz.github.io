@@ -365,9 +365,7 @@ function findMatches(wordToMatch, taskList) {
 }
 
 function displayMatches() {
-  console.log(this.value);
   const matchArray = findMatches(this.value, tasks);
-  console.log(matchArray);
   const html = matchArray.map(task => {
     const regex = new RegExp(this.value, 'gi');
     const taskName = task.taskName.replace(regex, `<span class="hl">${this.value}</span>`);
